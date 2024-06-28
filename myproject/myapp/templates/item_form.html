@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>New Item</title>
+</head>
+<body>
+    <h1>New Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <p><a href="{% url 'item_list' %}">Back to list</a></p>
+</body>
+</html>
