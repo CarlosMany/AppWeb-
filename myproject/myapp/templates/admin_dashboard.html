@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, Admin</h1>
+    <a href="{% url 'item_new' %}">Create New Item</a>
+    <ul>
+        {% for item in items %}
+        <li>
+            <a href="{% url 'item_detail' item.pk %}">{{ item.name }}</a>
+            (<a href="{% url 'item_edit' item.pk %}">edit</a>)
+            (<a href="{% url 'item_delete' item.pk %}">delete</a>)
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
