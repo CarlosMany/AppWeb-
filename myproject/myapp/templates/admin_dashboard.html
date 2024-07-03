@@ -3,14 +3,14 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <h1>Welcome, Admin</h1>
-    <a href="{% url 'item_new' %}">Create New Item</a>
+    <h1>Bienvenido, Admin</h1>
+    <a href="{% url 'item_new' %}">Crear/Editar registro</a>
     <ul>
         {% for item in items %}
         <li>
             <a href="{% url 'item_detail' item.pk %}">{{ item.name }}</a>
-            (<a href="{% url 'item_edit' item.pk %}">edit</a>)
-            (<a href="{% url 'item_delete' item.pk %}">delete</a>)
+            (<a href="{% url 'item_edit' item.pk %}">Editar</a>)
+            (<a href="{% url 'item_delete' item.pk %}">Borrar</a>)
         </li>
         {% endfor %}
     </ul>

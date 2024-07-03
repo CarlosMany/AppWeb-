@@ -2,7 +2,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.login_view, name='login'),
+    path('', views.main_view, name='main'),
+    # path('', views.login_view, name='login'),
+    path('login/', views.login_view, name='login'),
     path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('user_dashboard/', views.user_dashboard, name='user_dashboard'),
     # Existing paths...
@@ -12,8 +14,4 @@ urlpatterns = [
     path('item/<int:pk>/delete/', views.item_delete, name='item_delete'),
     path('items/', views.item_list, name='item_list'),
     #codigo agregado
-    path('', views.main_view, name='main'),
-    path('login/', views.login_view, name='login'),
-    path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
-    path('user_dashboard/', views.user_dashboard, name='user_dashboard'),
 ]

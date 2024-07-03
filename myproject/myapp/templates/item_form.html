@@ -3,12 +3,12 @@
     <title>New Item</title>
 </head>
 <body>
-    <h1>New Item</h1>
+    <h1>Nuevo registro</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save</button>
+        <button type="submit">Guardar</button>
     </form>
-    <p><a href="{% url 'item_list' %}">Back to list</a></p>
+    <p><a href="{% url 'item_list' %}">Regresar a los registros</a></p>
 </body>
 </html>
