@@ -1,16 +1,71 @@
 <html>
-<head>
+  <head>
     <title>Login</title>
-</head>
-<body>
-    <h1>Login</h1>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+        .centered-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+        }
+
+        *{padding:0;margin:0;box-sizing:border-box;font-family:sans-serif}a{text-decoration:none}img{max-width:100%;height:auto}html{font-size:14px}body{background-color:#fafafa;color:#262626}.l-main{width:100vw;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden}@media (max-width: 449px){.l-main{display:block}}@media (max-width: 874px){.l-main .l-main__img{display:none}}.l-user{display:flex;flex-direction:column}.group{background:#fff;border:1px solid lightgrey}@media (max-width: 449px){.group{background:inherit;border:none}}.c-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 40px 0}.c-panel .c-panel__img{height:51px;width:175px;margin-bottom:30px}.c-panel .c-panel__form{display:flex;flex-direction:column;text-align:center;width:250px}.c-panel .c-panel__form .c-btn{margin-top:14px}.c-panel .c-panel__form .c-panel__input{color:#262626;background:#fafafa;border:1px solid lightgray;padding:9px 0 7px 8px;border-radius:4px;outline:none}.c-panel .c-panel__form .c-panel__input:nth-child(1){margin-bottom:6px}.c-panel .c-panel__form .c-panel__span{font-size:13px;font-weight:600;color:#8e8e8e;margin:16px 0 30px 0;position:relative}.c-panel .c-panel__form .c-panel__span::after{content:'';position:absolute;display:inline-block;vertical-align:middle;background:lightgray;width:40%;height:1.5px;top:8px;right:0}.c-panel .c-panel__form .c-panel__span::before{content:'';position:absolute;display:inline-block;vertical-align:middle;background:lightgray;width:40%;height:1.5px;top:8px;left:0px}.c-panel .c-panel__facebook{color:#385185;display:flex}.c-panel .c-panel__facebook::before{content:'';display:inline-block;width:16px;height:16px;background:url(../img/facebook.svg);margin-right:8px}.c-panel .c-panel__forgot{margin:20px 0 20px;font-size:12px;color:#0095f6}.c-btn{color:#fff;font-weight:500;background:#0095f6;border-radius:4px;font-size:14px;line-height:18px;padding:6px 0}.c-app p{text-align:center;margin:20px 0}.c-app .c-app__download{display:flex;justify-content:center;cursor:pointer}.c-app .c-app__download img{max-width:140px;max-height:40px}.c-app .c-app__download img:nth-child(2){margin-left:8px}.c-signup{display:flex;justify-content:center;align-items:center;padding:20px;margin-top:10px}.c-signup span{color:#0095f6;cursor:pointer}
+    </style>
+  </head>
+  <body class="p-3 mb-2 bg-primary-subtle text-primary-emphasis" style="--bs-bg-opacity: .5;">
+    {% comment %} <div class="centered-container">
+        <h1 class="h1">Login</h1>
+    </div> {% endcomment %}
     <form method="post">
         {% csrf_token %}
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit">Entrar</button>
+        {% comment %} <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required><br> {% endcomment %}
+        {% comment %} <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required><br> {% endcomment %}
+        
+        {% comment %} <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput-username" name = "username" required>
+            <label for="floatingInput" for="username">Usuario:</label>
+        </div>  {% endcomment %}
+        {% comment %} <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword-password" name="password" required>
+            <label for="floatingPassword" for="password">Contraseña:</label>
+        </div> {% endcomment %}
+        {% comment %} <div class="d-grid gap-2" style = "margin: 10px">
+            <button  type="submit" class="btn btn-primary" type="button">Entrar</button>
+          </div> {% endcomment %}
+
+          <main class="l-main">
+            <div class="l-user">
+              <div class="c-panel group">
+                <div class="centered-container">
+                    <h1 class="h1">Login</h1>
+                </div>
+                
+                <div class="c-panel__form" style="margin: 10px;">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput-username" name = "username" required>
+                        <label for="floatingInput" for="username">Usuario:</label>
+                    </div> 
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword-password" name="password" required>
+                        <label for="floatingPassword" for="password">Contraseña:</label>
+                    </div>
+                    <div class="d-grid gap-2" style = "margin: 10px">
+                        <button  type="submit" class="btn btn-primary" type="button">Entrar</button>
+                      </div>
+                </div style="margin: 10px;">
+                
+              </div>
+              <!-- <div class="c-signup group">
+                <p>Don't have an account? <span>Sign up</span></p>
+              </div> -->
+            </div>
+        </main>
     </form>
-</body>
+  </body>
 </html>

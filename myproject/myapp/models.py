@@ -5,6 +5,7 @@ class Item(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     Empresa = models.CharField(max_length=100, default="Sin empresa")
+    # Phone = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -46,7 +47,7 @@ class Producto(models.Model):
         return self.nombre
 
 class Venta(models.Model):
-    fecha = models.DateTimeField(auto_now_add=True)
+    fecha = models.DateTimeField(blank=True)
     cantidad = models.IntegerField()
     total = models.DecimalField(max_digits=10, decimal_places=2)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
