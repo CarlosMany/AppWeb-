@@ -353,6 +353,22 @@ def login_view(request):
             return HttpResponse("Invalid login")
     return render(request, 'login.html')
 
+# Login usuario
+def login_view_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            if user.is_staff:
+                return redirect('user_dashboard')
+            else:
+                return redirect('admin_dashboard')
+        else:
+            return HttpResponse("Invalid login")
+    return render(request, 'login_user.html')
+
 def admin_dashboard(request):
     if not request.user.is_staff:
         return redirect('login')
