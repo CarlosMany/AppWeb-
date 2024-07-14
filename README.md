@@ -44,7 +44,19 @@ Esta aplicación es un CRUD orientado a CRM básico, la finalidad es ir mejorán
 2. Utiliza la barra de búsqueda para encontrar el documento específico que deseas consultar.
 3. Haz clic en el nombre del documento para ver los detalles completos.
 
+## Versión
+
+### Versión 1
+
+Esta es la versión 1 de la aplicación, en la cual solo se desarrolló el panel de administrador.
+
+### Versión 2 (Planeada)
+
+Para la versión 2, se tiene planeado desarrollar el panel de usuario, el cual permitirá:
+- Ver sus compras.
+- Realizar pedidos.
+- Ver el estatus de sus pedidos.
+
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia GPL-3.0. Para más detalles, consulta el archivo `LICENSE`.
-
