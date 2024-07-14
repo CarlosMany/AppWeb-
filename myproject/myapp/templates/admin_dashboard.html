@@ -35,9 +35,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          {% comment %} <li class="nav-item">
             <a class="nav-link" href="{% url 'item_list' %}">Item</a>
-          </li>
+          </li> {% endcomment %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'cliente_list' %}">Clientes</a>
           </li>
@@ -53,9 +53,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'venta_list' %}">Venta</a>
           </li>
-          <li class="nav-item">
+          {% comment %} <li class="nav-item">
             <a class="nav-link" href="{% url 'empleado_list' %}">Empleado</a>
-          </li>
+          </li> {% endcomment %}
         </ul>
       </div>
     </nav>
@@ -63,7 +63,7 @@
     <div class="container mt-5">
       <div class="text-center mb-4">
         <h1>Bienvenido, Admin</h1>
-        <a href="{% url 'item_new' %}" class="btn btn-primary">Crear/Editar registro</a>
+        {% comment %} <a href="{% url 'item_new' %}" class="btn btn-primary">Crear/Editar registro</a> {% endcomment %}
       </div>
 
       <div class="row">
@@ -118,7 +118,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 mb-4">
+        <div class="col-md-6 mb-6">
           <div class="card">
             <div class="card-body text-center">
               <h2>Productos</h2>
@@ -135,7 +135,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 mb-4">
+        <div class="col-md-6 mb-6">
           <div class="card">
             <div class="card-body text-center">
               <h2>Ventas</h2>
@@ -152,7 +152,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 mb-4">
+        {% comment %} <div class="col-md-4 mb-4">
           <div class="card">
             <div class="card-body text-center">
               <h2>Empleados</h2>
@@ -167,7 +167,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
       </div>
     </div>
 
