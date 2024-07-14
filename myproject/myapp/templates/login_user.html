@@ -7,6 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOG_in</title>
 <style id="applicationStylesheet" type="text/css">
+
+	body, html {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(255,255,255,1);
+	}
+
+
 	.mediaViewInfo {
 		--web-view-name: LOG_in;
 		--web-view-id: LOG_in;
@@ -84,18 +97,64 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#LOG_in {
+	{% comment %} #LOG_in {
 		position: absolute;
 		width: 1920px;
 		height: 1080px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
-        transform: scale(0.78);
+        
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 		--web-view-name: LOG_in;
 		--web-view-id: LOG_in;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
+	} {% endcomment %}
+
+
+	{% comment %} codigo agregado {% endcomment %}
+	#LOG_in {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: LOG_in;
+		--web-view-id: LOG_in;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
+	
+	#content {
+		width: 100%;
+		height: 100%;
+		max-width: 1920px;
+		max-height: 1080px;
+		background-color: rgba(255,255,255,1);
+		
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	}
+	
+	@media (max-width: 1920px) {
+		#content {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+
+	{% comment %} termina codigo agregado {% endcomment %}
 	#aab {
 		fill: url(#aab);
 	}
@@ -3513,7 +3572,8 @@ window.application = new Application();
 </head>
 <body>
 	<div id="LOG_in">
-        <svg class="aab">
+		<div id="content">
+		<svg class="aab">
             <radialGradient id="aab" spreadMethod="pad" x1="0" x2="0" y1="0" y2="0">
                 <stop offset="0" stop-color="#382644" stop-opacity="1"></stop>
                 <stop offset="1" stop-color="#03161b" stop-opacity="1"></stop>
@@ -3640,6 +3700,68 @@ window.application = new Application();
                 <path id="abq" d="M 0 4 C 0 1.790860891342163 1.790860891342163 0 4 0 C 6.209138870239258 0 8 1.790860891342163 8 4 C 8 6.209138870239258 6.209138870239258 8 4 8 C 1.790860891342163 8 0 6.209138870239258 0 4 Z"></path>
             </svg>
         </div>
-    </div>
+	</div>
+</div>
+
+    
+    
+    <script>
+    function scaleContent() {
+        const content = document.getElementById('content');
+        const scaleX = window.innerWidth / 1920;
+        const scaleY = window.innerHeight / 1080;
+        const scale = Math.min(scaleX, scaleY);
+        const translateX = Math.max(0, (window.innerWidth - 1920 * scale) / 2 / scale);
+        const translateY = Math.max(0, (window.innerHeight - 1080 * scale) / 2 / scale);
+        content.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        content.style.transformOrigin = 'top left';
+        document.body.style.overflow = 'hidden';
+    }
+
+    window.addEventListener('resize', scaleContent);
+    window.addEventListener('load', scaleContent);
+    </script>
+    
+    function scaleContent() {
+        const content = document.getElementById('content');
+        const scaleX = window.innerWidth / 1920;
+        const scaleY = window.innerHeight / 1080;
+        const scale = Math.min(scaleX, scaleY);
+        const translateX = (window.innerWidth - 1920 * scale) / 2 / scale;
+        const translateY = (window.innerHeight - 1080 * scale) / 2 / scale;
+        content.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        content.style.transformOrigin = 'top left';
+    }
+
+    window.addEventListener('resize', scaleContent);
+    window.addEventListener('load', scaleContent);
+    </script>
+    
+    function scaleContent() {
+        const content = document.getElementById('content');
+        const container = document.getElementById('LOG_in');
+        const scaleX = window.innerWidth / 1920;
+        const scaleY = window.innerHeight / 1080;
+        const scale = Math.min(scaleX, scaleY);
+        const translateX = (window.innerWidth - 1920 * scale) / 2 / scale;
+        const translateY = (window.innerHeight - 1080 * scale) / 2 / scale;
+        content.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+    }
+
+    window.addEventListener('resize', scaleContent);
+    window.addEventListener('load', scaleContent);
+    </script>
+    
+	function scaleContent() {
+		const content = document.getElementById('content');
+		const scaleX = window.innerWidth / 1920;
+		const scaleY = window.innerHeight / 1080;
+		const scale = Math.min(scaleX, scaleY);
+		content.style.transform = `scale(${scale})`;
+	}
+
+	window.addEventListener('resize', scaleContent);
+	window.addEventListener('load', scaleContent);
+</script>
 </body>
 </html>
