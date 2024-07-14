@@ -17,6 +17,7 @@
     </style>
   </head>
   <body class="p-3 mb-2 bg-primary-subtle text-primary-emphasis" style="--bs-bg-opacity: .5;">
+    
     {% comment %} <div class="centered-container">
         <h1 class="h1">Login</h1>
     </div> {% endcomment %}
@@ -38,7 +39,6 @@
         {% comment %} <div class="d-grid gap-2" style = "margin: 10px">
             <button  type="submit" class="btn btn-primary" type="button">Entrar</button>
           </div> {% endcomment %}
-
           <main class="l-main">
             <div class="l-user">
               <div class="c-panel group">
@@ -58,7 +58,9 @@
                     <div class="d-grid gap-2" style = "margin: 10px">
                         <button  type="submit" class="btn btn-primary" type="button">Entrar</button>
                       </div>
+                      <a class="btn btn-outline-secondary" href="{% url 'main' %}" style = "margin: 10px">Regresar</a>
                 </div style="margin: 10px;">
+
                 
               </div>
               <!-- <div class="c-signup group">
