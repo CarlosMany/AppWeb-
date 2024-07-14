@@ -43,6 +43,22 @@ Esta aplicación es un CRUD orientado a CRM básico, la finalidad es ir mejorán
 1. Navega al menú **Documentos** en el tablero principal.
 2. Utiliza la barra de búsqueda para encontrar el documento específico que deseas consultar.
 3. Haz clic en el nombre del documento para ver los detalles completos.
+## Descargar y Usar el Proyecto
+
+### Requisitos Previos
+
+- Python 3.x
+- Django
+
+### Instrucciones
+
+1. Clona el repositorio: git clone https://github.com/tu-usuario/AppWeb.git
+2. Navega al directorio del proyecto: cd AppWeb/myproject
+3. Instala las dependencias: pip install -r requirements.txt
+4. Realiza las migraciones de la base de datos: python manage.py migrate
+5. Crea un superusuario para acceder al panel de administración: python manage.py createsuperuser
+6. Inicia el servidor de desarrollo: python manage.py runserver
+7. Abre tu navegador web y navega a http://127.0.0.1:8000/admin para acceder al panel de administración.
 
 ## Versión
 
