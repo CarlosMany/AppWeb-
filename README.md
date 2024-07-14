@@ -52,7 +52,7 @@ Esta aplicación es un CRUD orientado a CRM básico, la finalidad es ir mejorán
 
 ### Instrucciones
 
-1. Clona el repositorio: git clone https://github.com/tu-usuario/AppWeb.git
+1. Clona el repositorio: git clone https://github.com/CarlosMany/AppWeb-.git
 2. Navega al directorio del proyecto: cd AppWeb/myproject
 3. Instala las dependencias: pip install -r requirements.txt
 4. Realiza las migraciones de la base de datos: python manage.py migrate
